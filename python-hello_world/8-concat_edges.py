@@ -2,4 +2,4 @@
 str = "Python is an interpreted, interactive, object-oriented programming\
  language that combines remarkable power with very clear syntax"
 # YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
-print(str.split()[5] +" "+ str.split()[6] +" "+ str.split()[12]+ " " +str.split()[0])
+print(str[39:str.find("language")]+ "" + "with python")
