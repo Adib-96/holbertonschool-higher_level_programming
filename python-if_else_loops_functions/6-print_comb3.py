@@ -5,5 +5,8 @@ for i in range(10):
         if j < i or j == i:
             continue
         else:
-            print("{}{}".format(i, j), end=" ")
+            if i == 8:
+                print("{}{}".format(i, j), end=" ")
+            else:
+                print("{}{}".format(i, j), end=", ")
 print()
