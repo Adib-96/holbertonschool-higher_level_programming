@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
-for i in ["abcdefghijklmnopqrstuvwxyz"]:
-    print(i,end="")
+for character in range(65,91):
+    print(chr(character).lower(),end="")
