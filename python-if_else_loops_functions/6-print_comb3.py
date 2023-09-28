@@ -5,7 +5,7 @@ for i in range(10):
             continue
         else:
             if i == 8:
-                print("{}{}".format(i, j),end=" ")
+                print("{}{}".format(i, j),end="")
             else:
                 print("{}{}".format(i, j), end=", ")
-print('\n')
+print()
