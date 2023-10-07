@@ -3,5 +3,5 @@ def uniq_add(my_list=[]):
     my_set = set(my_list)
     num = 0
     for _ in my_set:
-        num+=_
+        num += _
     return num
