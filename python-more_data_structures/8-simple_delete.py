@@ -6,5 +6,3 @@ def simple_delete(a_dictionary, key=""):
         del a_dictionary[key]
     # Return the updated dictionary
     return a_dictionary
-
-    
