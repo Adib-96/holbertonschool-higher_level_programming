@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Module for matrix_divided method."""
+
+
 def matrix_divided(matrix, div):
     """"Returns a new matrix which each element will be 
     divided by div variable.
