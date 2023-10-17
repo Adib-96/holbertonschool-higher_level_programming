@@ -31,4 +31,5 @@ def matrix_divided(matrix, div):
     #and rounds the result to two decimal places. 
     #The result is a new 2D matrix with the same dimensions 
     #as the original, but with updated values.
-    return [list(map(lambda x: round(x / div, 2), row)) for row in matrix]            
+    return [list(map(lambda x: round(x / div, 2), row)) for row in matrix]
+            
