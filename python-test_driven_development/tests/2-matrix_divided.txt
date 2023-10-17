@@ -1,0 +1,47 @@
+===============================
+How to Use 2-matrix_divided.py
+===============================
+
+This module is very simple, sine it only has one function called
+``matrix_divided(matrix, div)``
+
+
+Use Case
+=========
+::
+>>> matrix_divided = __import__('exemple').matrix_divided
+>>> matrix = [
+...     [4, 8, 12],
+...     [16, 20, 24]
+... ]
+>>> print(matrix_divided(matrix,3))
+[[1.33, 2.67, 4.0], [5.33, 6.67, 8.0]]
+
+Note Only two digit after the floating point
+
+::
+
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6],
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+The original matrix is left unchanged.
+
+::
+
+
+Invalid Matrix
+===============
+
+The parameter ``matrix`` must be a list of lists (elements must be int or float).
+if ``matrix is not a list a TypeError is raised``
+
+::
+
+>>> matrix = {"python": "is awesome"}
+>>> print(matrix_divided(matrix,2))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
