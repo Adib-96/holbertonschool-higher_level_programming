@@ -1,2 +1,3 @@
 def copy_list(a_list):
-    return [_ for _ in a_list]
+    new_list = a_list.copy()
+    return  new_list
