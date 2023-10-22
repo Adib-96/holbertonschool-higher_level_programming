@@ -20,6 +20,7 @@ class Square:
     
     @size.setter
     def size(self, value):
+        """set/get the size of the square"""
         if not isinstance(value,int):
             raise TypeError("size must be an integer")
         elif value < 0:
