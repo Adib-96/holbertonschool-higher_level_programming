@@ -19,15 +19,6 @@ class Rectangle:
         width of a Rectangle
     height : int
         height of a rectangle
-
-    Methods
-    -------
-
-
-
-
-
-
     """
     def __init__(self, width=0, height=0):
         """
@@ -45,6 +36,11 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
+        """
+        Set the width attr
+        args:
+        value (int): width value
+        """
         if type(value) is int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -54,11 +50,18 @@ class Rectangle:
 
     @property
     def height(self):
-        """Return the height attr"""
+        """
+        Return the height attr
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        Set the height attr
+        args:
+        value (int): height value
+        """
         if type(value) is int:
             raise TypeError("height must be an integer")
         elif value < 0:
