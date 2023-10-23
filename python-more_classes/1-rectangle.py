@@ -11,35 +11,43 @@ class Rectangle:
 
     A class to represent a Rectangle
 
-    ...
-
-    Attributes
-    ----------
-    width : int
-        width of a Rectangle
-    height : int
-        height of a rectangle
     """
     def __init__(self, width=0, height=0):
         """
 
-        Constructs all the necessary attributes for the Rectangle object.
+        Checks the parameters and initializes some values
+
+        Args:
+            width (:obj:`int`, optional): The width of the Rectangle.
+            height (:obj:`int`, optional): The height of the Rectangle.
 
         """
+
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
-        """Return the width attr"""
+        """
+        
+        Return the width of the Rectangle
+        
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Set the width attr
-        args:
-        value (int): width value
+
+        Checks the parameters and set the size of the Rectangle
+
+        Args:
+            value (int): The width of the Rectangle.
+
+        Raises:
+            TypeError: If `value` type is not `int`.
+            ValueError: If `value` is less than `0`.
+
         """
         if type(value) is int:
             raise TypeError("width must be an integer")
@@ -51,16 +59,25 @@ class Rectangle:
     @property
     def height(self):
         """
-        Return the height attr
+
+        Return the height of the rectangle.
+        
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Set the height attr
-        args:
-        value (int): height value
+
+        Checks the parameters and set the size of the Rectangle
+
+        Args:
+            value (int): The height of the Rectangle.
+
+        Raises:
+            TypeError: If `value` type is not `int`.
+            ValueError: If `value` is less than `0`.
+
         """
         if type(value) is int:
             raise TypeError("height must be an integer")
