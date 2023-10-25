@@ -11,7 +11,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """initializes the square
         Args:
-            size (int): size of a side of the square
+            size (int): size of the square
             postion(tuple): postion of square in 2D space
         Returns:
             None
@@ -31,7 +31,7 @@ class Square:
     @property
     def size(self):
         """
-        getter of size
+        get size
 
         Return:
             Size of square
@@ -41,11 +41,11 @@ class Square:
     @size.setter
     def size(self, value):
         """
-        Setter of size
+        Set size
 
         Args:
-            value (int): size of a side of the square
-        Raises
+            value (int): size of of the square
+        Raises:
             TypeError: if size is not int
             ValueError: size less than 0
         Returns:
@@ -55,12 +55,11 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
 
     def my_print(self):
         """
-        print a square from the size using ##
+        print a square from the size using "#"
 
         Returns:
             None
@@ -85,7 +84,7 @@ class Square:
         """
             setter of position
         Args:
-            value (tuple): position of the square in 2D space
+            value (tuple): position of the square
         Returns:
             None
         """
