@@ -4,7 +4,7 @@ function that write a string to a text file
 """
 
 
-def read_file(filename="", text=""):
+def write_file(filename="", text=""):
     """
     write string to a text file and return the number of charcter written
     """
