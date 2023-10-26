@@ -1,87 +1,42 @@
 #!/usr/bin/python3
-"""
-
-Module with a Rectangle class
-
-"""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """
+    """Represent a rectangle."""
 
-    A class to represent a Rectangle
-
-    """
     def __init__(self, width=0, height=0):
-        """
-
-        Checks the parameters and initializes some values
+        """Initialize a new Rectangle.
 
         Args:
-            width (:obj:`int`, optional): The width of the Rectangle.
-            height (:obj:`int`, optional): The height of the Rectangle.
-
+            width (int): The width of the new rectangle.
+            height (int): The height of the new rectangle.
         """
-
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """
-        
-        Return the width of the Rectangle
-        
-        """
+        """Get/set the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-
-        Checks the parameters and set the size of the Rectangle
-
-        Args:
-            value (int): The width of the Rectangle.
-
-        Raises:
-            TypeError: If `value` type is not `int`.
-            ValueError: If `value` is less than `0`.
-
-        """
-        if type(value) is int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        self.__width = value
 
     @property
     def height(self):
-        """
-
-        Return the height of the rectangle.
-        
-        """
+        """Get/set the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-
-        Checks the parameters and set the size of the Rectangle
-
-        Args:
-            value (int): The height of the Rectangle.
-
-        Raises:
-            TypeError: If `value` type is not `int`.
-            ValueError: If `value` is less than `0`.
-
-        """
-        if type(value) is int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+        self.__height = value
