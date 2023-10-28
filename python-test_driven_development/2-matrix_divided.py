@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-"""Module for matrix_divided method."""
+"""Defines a matrix division function."""
 
 
 def matrix_divided(matrix, div):
-    """"Returns a new matrix which each element will be 
-    divided by div variable.
+    """Divide all elements of a matrix.
+
     Args:
-        matrix (list) : A list of lists of integers and floats.
-        div : a divisor.
+        matrix (list): A list of lists of ints or floats.
+        div (int/float): The divisor.
     Raises:
-        TypeError: 
-        {
-        - if the matrix contains non numbers.
-        - if the matrix contains rows of different sizes.
-        - if div is not an int or float
-        }
-        ZeroDivisionError: if div contains 0.
+        TypeError: If the matrix contains non-numbers.
+        TypeError: If the matrix contains rows of different sizes.
+        TypeError: If div is not an int or float.
+        ZeroDivisionError: If div is 0.
+    Returns:
+        A new matrix representing the result of the division.
     """
     if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or
@@ -29,10 +28,5 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    #In summary, this code takes a 2D matrix, 
-    #divides each element in the matrix by 4, 
-    #and rounds the result to two decimal places. 
-    #The result is a new 2D matrix with the same dimensions 
-    #as the original, but with updated values.
+    
     return [list(map(lambda x: round(x / div, 2), row)) for row in matrix]
-            
