@@ -3,20 +3,19 @@
 
 
 def print_square(size):
-    """Print a square matrix with the # charcater.
-    
+    """Print a square with the # character.
+
     Args:
-        size (int): size of the square matrix
+        size (int): The height/width of the square.
     Raises:
-        TypeError: if size is not integer
-        ValueError: if size is < 0
+        TypeError: If size is not an integer.
+        ValueError: If size is < 0
     """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
-    else:
-        for i in range(size):
-            for j in range(size):
-                print("#", end="")
-            print()
+
+    for i in range(size):
+        [print("#", end="") for j in range(size)]
+        print("")
