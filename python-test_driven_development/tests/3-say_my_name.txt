@@ -20,13 +20,6 @@ Usage
     >>> say_my_name("Cristiano", "Ronaldo")
     My name is Cristiano Ronaldo
 
-The parameter ```last_name``` is optional. If no last name is provided,
-an empty string is printed instead.
-
-::
-
-    >>> say_my_name("Adib")
-    My name is Adib
 
 Invalid Names
 =============
@@ -48,7 +41,7 @@ a TypeError is raised.
 
 ::
 
-    >>> say_my_name({"Nationality": Tunisian, "age": 23}, 4050)
+    >>> say_my_name({"fname": 6, "lname": 23}, 7.7)
     Traceback (most recent call last):
     TypeError: first_name must be a string
 
