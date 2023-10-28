@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Module that define a function to print a square matrix."""
+
+
 def print_square(size):
     """Print a square matrix.
     
