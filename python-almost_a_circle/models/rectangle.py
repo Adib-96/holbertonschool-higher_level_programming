@@ -23,10 +23,10 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
     
     @property
@@ -84,3 +84,10 @@ class Rectangle(Base):
     def area(self):
         """Returns the area of the Rectangle."""
         return self.__width * self.__height
+    
+    def display(self):
+        """print the rectangle with the # format."""
+        rows = [["#" for i in range(self.__height)] for i in range(self._width)]
+
+        for row in rows:
+            print("".join(row))
