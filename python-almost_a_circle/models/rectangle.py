@@ -4,7 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Represent a rectangle"""
+    """Represent a rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Intialize a new Rectangle object.
@@ -21,7 +21,6 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-        
         self.width = width
         self.height = height
         self.x = x
