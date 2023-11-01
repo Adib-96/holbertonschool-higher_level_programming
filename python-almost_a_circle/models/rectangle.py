@@ -87,7 +87,7 @@ class Rectangle(Base):
     
     def display(self):
         """print the rectangle with the # format."""
-        rows = [["#" for i in range(self.__height)] for i in range(self.__width)]
+        rows = [["#" for i in range(self.__width)] for i in range(self.__height)]
 
         for row in rows:
             print("".join(row))
