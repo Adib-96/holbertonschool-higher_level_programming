@@ -22,10 +22,10 @@ class Rectangle(Base):
             ValueError: If either of x or y < 0.
         """
         
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
     
     @property
@@ -79,3 +79,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+    
+    def area(self):
+        """Returns the area of the Rectangle."""
+        return self.__width * self.__height
