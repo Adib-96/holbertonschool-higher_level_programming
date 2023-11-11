@@ -1,92 +1,115 @@
 #!/usr/bin/python3
 """
-
-Defines a rectangle class.
-
+...
 """
+
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Represent a rectangle."""
+    """
+    ...
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Intialize a new Rectangle object.
-        
-        Args:
-            width (int): The width of the new Rectangle.
-            height (int): The height of the new Rectangle.
-            x (int): The x coordinate of the new Rectangle.
-            y (int): The y coordinate of the new Rectangle.
-            id (int): The identity of the new Rectangle.
-        Raises:
-            TypeError: If either of width or height is not an int.
-            ValueError: If either of width or height <= 0.
-            TypeError: If either of x or y is not an int.
-            ValueError: If either of x or y < 0.
         """
+        ...
+        """
+        super().__init__(id)
+
+        self.check_integer_parameter(width, 'width')
+        self.check_integer_parameter(height, 'height')
+        self.check_integer_parameter(x, 'x')
+        self.check_integer_parameter(y, 'y')
+
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-        super().__init__(id)
-    
+
     @property
     def width(self):
-        """Set/get the width of the Rectangle."""
+        """
+        ...
+        """
         return self.__width
-    
+
+    @width.setter
+    def width(self, param):
+        """
+        ...
+        """
+        self.check_integer_parameter(param, 'width')
+
+        self.__width = param
+
     @property
     def height(self):
-        """Set/get the height of the Rectangle."""
+        """
+        ...
+        """
         return self.__height
-    
+
+    @height.setter
+    def height(self, param):
+        """
+        ...
+        """
+        self.check_integer_parameter(param, 'height')
+
+        self.__height = param
+
     @property
     def x(self):
-        """Set/get the x coordinate of the Rectangle."""
+        """
+        ...
+        """
         return self.__x
-    
+
+    @x.setter
+    def x(self, param):
+        """
+        ...
+        """
+        self.check_integer_parameter(param, 'x')
+
+        self.__x = param
+
     @property
     def y(self):
-        """Set/get the y coordinate of the Rectangle."""
+        """
+        ...
+        """
         return self.__y
-    
-    @width.setter
-    def width(self, value):
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-    
-    @height.setter
-    def height(self, value):
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = value
-    
-    @x.setter
-    def x(self, value):
-        if not isinstance(value, int):
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
-    
+
     @y.setter
-    def y(self,value):
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
-    
+    def y(self, param):
+        """
+        ...
+        """
+        self.check_integer_parameter(param, 'y')
+
+        self.__y = param
+
+    def check_integer_parameter(self, value, param):
+        """
+        ...
+        """
+        if type(value) is not int:
+            raise TypeError(param + ' must be an integer')
+
+        if value <= 0 and param in ('width', 'height'):
+            raise ValueError(param + ' must be > 0')
+
+        if value < 0 and param in ('x', 'y'):
+            raise ValueError(param + ' must be >= 0')
+
     def area(self):
-        """Returns the area of the Rectangle."""
+        """
+        ...
+        """
         return self.__width * self.__height
-    
+
     def display(self):
         """
         ...
@@ -101,11 +124,13 @@ class Rectangle(Base):
             print('#' * self.__width)
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.x, self.y,
-                                                       self.width, self.height)
-    
+        """
+        ...
+        """
+        return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
+            self.id, self.x, self.y, self.width, self.height
+        )
+
     def update(self, *args, **kwargs):
         """
         ...
@@ -124,3 +149,15 @@ class Rectangle(Base):
             for k, v in kwargs.items():
                 if k in modif_attrs:
                     setattr(self, k, v)
+
+    def to_dictionary(self):
+        """
+        ...
+        """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
