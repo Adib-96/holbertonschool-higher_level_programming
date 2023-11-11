@@ -88,11 +88,18 @@ class Rectangle(Base):
         return self.__width * self.__height
     
     def display(self):
-        """print the rectangle with the # format."""
-        rows = [["#" for i in range(self.__width)] for i in range(self.__height)]
+        """
+        ...
+        """
+        if self.__y > 0:
+            print('\n' * self.__y, end='')
 
-        for row in rows:
-            print("".join(row))
+        for i in range(self.height):
+            if self.__x > 0:
+                print(' ' * self.__x, end='')
+
+            print('#' * self.__width)
+
 
     def __str__(self):
         """Return the print() and str() representation of the Rectangle."""
