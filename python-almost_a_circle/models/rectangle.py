@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
+
 Defines a rectangle class.
+
 """
 from models.base import Base
 
@@ -23,10 +25,10 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
     
     @property
@@ -84,16 +86,17 @@ class Rectangle(Base):
     def area(self):
         """Returns the area of the Rectangle."""
         return self.__width * self.__height
-
+    
     def display(self):
-        """
-        ...
-        """
-        if self.__y > 0:
-            print('\n' * self.__y, end='')
+        """print the rectangle with the # format."""
+        rows = [["#" for i in range(self.__width)] for i in range(self.__height)]
 
-        for i in range(self.height):
-            if self.__x > 0:
-                print(' ' * self.__x, end='')
+        for row in rows:
+            print("".join(row))
 
-            print('#' * self.__width)
+    def __str__(self):
+        """Return the print() and str() representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
+    
