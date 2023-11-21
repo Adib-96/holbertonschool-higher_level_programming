@@ -1,2 +1,2 @@
---Script that print a full description of a table
+-- Script that print a full description of a table
 SHOW COLUMNS FROM hbtn_0c_0.first_table;
