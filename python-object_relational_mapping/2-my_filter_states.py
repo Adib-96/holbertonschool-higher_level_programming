@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-"""
-
-script that takes in an argument
+""" a script that takes in an argument
 and displays all values in the states table
- of hbtn_0e_0_usa where name matches the argument.
+of hbtn_0e_0_usa where name matches the argument.
 """
 
 
@@ -22,6 +20,6 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute(
         "SELECT * FROM states WHERE name = '{}' ORDER BY id;".format(argv[4]))
-    result = cursor.fetchall()
-    for row in result:
+    res = cursor.fetchall()
+    for row in res:
         print(row)
