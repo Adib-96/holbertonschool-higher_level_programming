@@ -12,15 +12,13 @@ from sys import argv
 if __name__ == "__main__":
     """conncet to db and run the query then print the result"""
     db = connect(
-        host="localhost",
         user=argv[1],
         password=argv[2],
         database=argv[3],
-        port=3306
     )
     cursor = db.cursor()
     cursor.execute(
         "SELECT * FROM states  \
-            WHERE `name` = '{}' \
-                ORDER BY id;".format(argv[4]))
+            WHERE BINARY `name` = '{}' ;\
+                ".format(argv[4]))
     [print(state) for state in cursor.fetchall()]
