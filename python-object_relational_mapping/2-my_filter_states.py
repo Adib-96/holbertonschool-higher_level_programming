@@ -11,6 +11,7 @@ from MySQLdb import connect
 from sys import argv
 
 if __name__ == "__main__":
+    """conncet to db and run the query then print the result"""
     db = connect(
         host="localhost",
         user=argv[1],
@@ -20,7 +21,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name = {} ORDER BY id;".format(argv[4]))
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id;".format(argv[4]))
     result = cursor.fetchall()
     for row in result:
         print(row)
